@@ -7,13 +7,14 @@ export function sessionsSpeakersScheduleMap(sessionsRaw, speakersRaw, scheduleRa
   for (const dayKey of Object.keys(scheduleRaw)) {
     const day = scheduleRaw[dayKey];
     const tracksNumber = day.tracks.length;
+    const sortedTimeslots = day.timeslots.sort(sortSlots);
     let dayTags = [];
     const timeslots = [];
     const extensions: { [key: string]: number } = {};
 
-    const timeslotLen = day.timeslots.length;
+    const timeslotLen = sortedTimeslots.length;
     for (let timeslotsIndex = 0; timeslotsIndex < timeslotLen; timeslotsIndex++) {
-      const timeslot = day.timeslots[timeslotsIndex];
+      const timeslot = sortedTimeslots[timeslotsIndex];
       let innerSessions = [];
 
       const sessionsLen = timeslot.sessions.length;
@@ -27,7 +28,7 @@ export function sessionsSpeakersScheduleMap(sessionsRaw, speakersRaw, scheduleRa
           const mainTag =
             subsession.tags && subsession.tags.length ? subsession.tags[0] : 'General';
           const endTimeRaw = timeslot.sessions[sessionIndex].extend
-            ? day.timeslots[timeslotsIndex + timeslot.sessions[sessionIndex].extend - 1].endTime
+            ? sortedTimeslots[timeslotsIndex + timeslot.sessions[sessionIndex].extend - 1].endTime
             : timeslot.endTime;
           const endTime =
             subSessionsLen > 1
@@ -134,6 +135,18 @@ export function sessionsSpeakersScheduleMap(sessionsRaw, speakersRaw, scheduleRa
     schedule,
     speakers,
   };
+}
+
+function sortSlots(a, b) {
+  const aStart = a.startTime;
+  const bStart = b.startTime;
+  if (aStart < bStart) {
+    return -1;
+  }
+  if (aStart > bStart) {
+    return 1;
+  }
+  return 0;
 }
 
 function getTimeDifference(date, startTime, endTime) {

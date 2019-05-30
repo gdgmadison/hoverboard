@@ -182,7 +182,7 @@ export class HeaderToolbar extends ReduxMixin(PolymerElement) {
           </a>
         </paper-tabs>
 
-        <paper-menu-button
+        <!-- <paper-menu-button
           id="notificationsMenu"
           class="notifications-menu"
           vertical-align="top"
@@ -221,7 +221,7 @@ export class HeaderToolbar extends ReduxMixin(PolymerElement) {
               </div>
             </div>
           </div>
-        </paper-menu-button>
+        </paper-menu-button> -->
 
         <paper-menu-button
           class="auth-menu"
