@@ -9,6 +9,9 @@ export const workboxConfig = {
   navigateFallback: '/index.html',
   navigateFallbackDenylist: [
     /\/__\/.*/, // Private Firebase URLs
+    /\/blog\/.*/,
+    /\/photos$/,
+    /\/cfp$/,
   ],
   skipWaiting: true,
   offlineGoogleAnalytics: true,

@@ -187,7 +187,7 @@ export class HoverboardApp extends ReduxMixin(PolymerElement) {
           <app-toolbar layout vertical start>
             <plastic-image
               class="toolbar-logo"
-              srcset="/images/logo-monochrome.svg"
+              srcset="/images/logo.svg"
               alt="{$ title $}"
             ></plastic-image>
             <h2 class="dates">{$ dates $}</h2>
@@ -253,10 +253,10 @@ export class HoverboardApp extends ReduxMixin(PolymerElement) {
             <blog-page name="blog" route="[[subRoute]]"></blog-page>
             <schedule-page name="schedule" route="[[subRoute]]"></schedule-page>
             <speakers-page name="speakers" route="[[subRoute]]"></speakers-page>
-            <previous-speakers-page
+            <!-- <previous-speakers-page
               name="previous-speakers"
               route="[[subRoute]]"
-            ></previous-speakers-page>
+            ></previous-speakers-page> -->
             <team-page name="team"></team-page>
             <faq-page name="faq"></faq-page>
             <coc-page name="coc"></coc-page>

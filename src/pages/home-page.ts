@@ -57,9 +57,9 @@ export class HomePage extends ReduxMixin(PolymerElement) {
           margin: 8px;
         }
 
-        .action-buttons .watch-video {
+        /* .action-buttons .watch-video {
           color: #fff;
-        }
+        } */
 
         .action-buttons iron-icon {
           --iron-icon-fill-color: currentColor;
@@ -151,8 +151,8 @@ export class HomePage extends ReduxMixin(PolymerElement) {
             srcset="/images/logo.svg"
             alt="{$ title $}"
           ></plastic-image>
-          <div class="info-items">
-            <div class="info-item">{$ location.city $}. {$ dates $}</div>
+          <div class="info-items highlight-font">
+            <div class="info-item">{$ dates $}</div>
             <div class="info-item">{$ heroSettings.home.description $}</div>
           </div>
 
@@ -164,6 +164,8 @@ export class HomePage extends ReduxMixin(PolymerElement) {
               ga-event-category="video"
               ga-event-action="watch"
               ga-event-label="hero block - view highlights"
+              primary
+              invert
             >
               <iron-icon icon="hoverboard:movie"></iron-icon>
               {$ viewHighlights $}
@@ -175,7 +177,6 @@ export class HomePage extends ReduxMixin(PolymerElement) {
               ga-event-action="scroll"
               ga-event-label="hero block - scroll to tickets"
               primary
-              invert
             >
               <iron-icon icon="hoverboard:ticket"></iron-icon>
               {$ buyTicket $}
@@ -255,7 +256,7 @@ export class HomePage extends ReduxMixin(PolymerElement) {
       <tickets-block></tickets-block>
       <gallery-block></gallery-block>
       <about-organizer-block></about-organizer-block>
-      <featured-videos></featured-videos>
+      <!-- <featured-videos></featured-videos> -->
       <latest-posts-block></latest-posts-block>
       <map-block></map-block>
       <partners-block></partners-block>
