@@ -143,7 +143,7 @@
 
       <app-drawer id="drawer" slot="drawer" opened="[[ui.isDrawerOpened]]" swipe-open>
         <app-toolbar layout vertical start>
-          <plastic-image class="toolbar-logo" srcset="/images/logo-monochrome.svg" alt="{$ title $}"></plastic-image>
+          <plastic-image class="toolbar-logo" srcset="/images/logo.svg" alt="{$ title $}"></plastic-image>
           <h2 class="dates">{$ dates $}</h2>
           <h3 class="location">{$ location.short $}</h3>
         </app-toolbar>
@@ -225,11 +225,11 @@
             data-path="pages/speakers-page.html"
             route="[[subroute]]"
           ></speakers-page>
-          <previous-speakers-page
+          <!-- <previous-speakers-page
             data-route="previous-speakers"
             data-path="pages/previous-speakers-page.html"
             route="[[subroute]]"
-          ></previous-speakers-page>
+          ></previous-speakers-page> -->
           <team-page
             data-route="team"
             data-path="pages/team-page.html"
