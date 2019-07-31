@@ -16,6 +16,7 @@
 <link rel="import" href="../../mixins/speakers-hoc.html">
 <link rel="import" href="../text-truncate.html">
 <link rel="import" href="../shared-styles.html">
+<link rel="import" href="../feedback-block.html">
 <link rel="import" href="dialog-styles.html">
 
 <dom-module id="session-details">
@@ -23,6 +24,10 @@
     <style include="shared-styles dialog-styles flex flex-alignment positioning">
       .section {
         cursor: pointer;
+      }
+      .star-rating {
+        display: inline-block;
+        vertical-align: middle;
       }
     </style>
 
@@ -129,6 +134,11 @@
             </div>
           </template>
         </div>
+
+        <div id="feedback" class="additional-sections" hidden="[[!sessionBegun]]">
+          <h3>{$ feedback.headline $}</h3>
+          <feedback-block collection="sessions" db-item="[[session.id]]"></feedback-block>
+        </div>
       </div>
     </app-header-layout>
 
@@ -152,6 +162,11 @@
           },
           session: {
             type: Object,
+            observer: '_sessionUpdate',
+          },
+          sessionBegun: {
+            value: false,
+            type: Boolean,
           },
           viewport: {
             type: Object,
@@ -228,6 +243,21 @@
 
       _getFeaturedSessionIcon(featuredSessions, sessionId) {
         return featuredSessions && featuredSessions[sessionId] ? 'bookmark-check' : 'bookmark-plus';
+      }
+
+      _sessionUpdate() {
+        const { day, startTime } = this.session;
+        if (day && startTime) {
+          const now = new Date();
+          const convertedTimezoneDate = new Date(
+              new Date(`${day} ${startTime}`).getTime() +
+              (parseInt('{$ timezoneOffset $}') - now.getTimezoneOffset()) * 60000
+          );
+
+          this.sessionBegun = now - convertedTimezoneDate > 0;
+        } else {
+          this.sessionBegun = false;
+        }
       }
     }
 
