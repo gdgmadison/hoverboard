@@ -18,6 +18,7 @@
 <link rel="import" href="../shared-styles.html">
 <link rel="import" href="../feedback-block.html">
 <link rel="import" href="dialog-styles.html">
+<link rel="import" href="../auth-required.html">
 
 <dom-module id="session-details">
   <template>
@@ -135,9 +136,18 @@
           </template>
         </div>
 
-        <div id="feedback" class="additional-sections" hidden="[[!sessionBegun]]">
+
+        <div id="feedback" class="additional-sections">
           <h3>{$ feedback.headline $}</h3>
-          <feedback-block collection="sessions" db-item="[[session.id]]"></feedback-block>
+
+          <auth-required hidden="[[!sessionBegun]]">
+            <slot slot="prompt">{$ feedback.leaveFeedback $}</slot>
+            <feedback-block collection="sessions" db-item="[[session.id]]"></feedback-block>
+          </auth-required>
+
+          <p hidden="[[sessionBegun]]">
+            {$ feedback.sessionClosed $}
+          </p>
         </div>
       </div>
     </app-header-layout>
@@ -249,12 +259,8 @@
         const { day, startTime } = this.session;
         if (day && startTime) {
           const now = new Date();
-          const convertedTimezoneDate = new Date(
-              new Date(`${day} ${startTime}`).getTime() +
-              (parseInt('{$ timezoneOffset $}') - now.getTimezoneOffset()) * 60000
-          );
-
-          this.sessionBegun = now - convertedTimezoneDate > 0;
+          const sessionStart = new Date(`${day} ${startTime}`);
+          this.sessionBegun = now > sessionStart;
         } else {
           this.sessionBegun = false;
         }
