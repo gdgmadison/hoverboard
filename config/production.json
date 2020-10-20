@@ -1,16 +1,17 @@
 {
   "basepath": "/",
-  "url": "https://hoverboard-master.web.app/",
-  "analytics": "UA-43643469-9",
+  "url": "https://2019.devfestwi.com/",
+  "analytics": "UA-141277136-1",
   "prefix": "/",
   "firebase": {
-    "apiKey": "AIzaSyCJqlRVGIe6bfU43rga3cnK7tSXXwc7JD8",
-    "appId": "1:516409946568:web:ad5a56d452fc421c",
-    "authDomain": "hoverboard-master.web.app",
-    "databaseURL": "https://hoverboard-master.firebaseio.com",
-    "messagingSenderId": "516409946568",
-    "projectId": "hoverboard-master",
-    "storageBucket": "hoverboard-master.appspot.com"
+    "apiKey": "AIzaSyD-vN6q1ocbyDTNbs0f4hOloh5URtb9B9I",
+    "appId": "1:625127072677:web:9791f069e56ad76511be4c",
+    "authDomain": "2019.devfestwi.com",
+    "databaseURL": "https://devfest-wi-archive-2019.firebaseio.com",
+    "measurementId": "G-QPW627SF2J",
+    "messagingSenderId": "625127072677",
+    "projectId": "devfest-wi-archive-2019",
+    "storageBucket": "devfest-wi-archive-2019.appspot.com"
   },
-  "googleMapApiKey": "AIzaSyCJqlRVGIe6bfU43rga3cnK7tSXXwc7JD8"
+  "googleMapApiKey": "AIzaSyD2d2-8Fj3fJZX1-BmmNwgvV2EtmJ7_YCs"
 }

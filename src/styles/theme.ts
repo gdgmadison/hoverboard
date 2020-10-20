@@ -2,12 +2,12 @@ import { css } from 'lit-element';
 
 export const theme = css`
   :host {
-    --dark-primary-color: #512da8;
-    --default-primary-color: #673ab7;
+    --dark-primary-color: #0069c0;
+    --default-primary-color: #2196f3;
     --focused-color: #311b92;
-    --light-primary-color: #d1c4e9;
+    --light-primary-color: #6ec6ff;
     --text-primary-color: #ffffff;
-    --accent-color: #ff5252;
+    --accent-color: #8e24aa;
     --primary-background-color: #ffffff;
     --primary-text-color: #424242;
     --secondary-text-color: #757575;
@@ -39,9 +39,9 @@ export const theme = css`
       sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
     --max-container-width: 1280px;
 
-    --primary-color-transparent: rgba(103, 58, 183, 0.1);
-    --primary-color-light: rgba(103, 58, 183, 0.8);
-    --primary-color-white: #ede7f6;
+    --primary-color-transparent: #e3f2fd;
+    --primary-color-light: #2962ff;
+    --primary-color-white: #e3f2fd;
 
     /* Labels */
     --gde: #3d5afe;
