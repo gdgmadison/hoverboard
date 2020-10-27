@@ -9,6 +9,23 @@
   },
   "hosting": {
     "public": "dist",
+    "redirects": [
+      {
+        "source": "/cfp",
+        "destination": "https://sessionize.com/devfest-wi-2020/",
+        "type": 302
+      },
+      {
+        "source": "/photos",
+        "destination": "https://photos.app.goo.gl/9jAU5bPm5tHo3bzK6",
+        "type": 302
+      },
+      {
+        "source": "/feedback",
+        "destination": "https://forms.gle/SKPW15ZSW2wbYUh9A",
+        "type": 302
+      }
+    ],
     "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
     "rewrites": [
       {

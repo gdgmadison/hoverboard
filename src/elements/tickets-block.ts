@@ -193,7 +193,8 @@ export class TicketsBlock extends ReduxMixin(PolymerElement) {
           </template>
         </div>
 
-        <div class="additional-info">*{$ ticketsBlock.ticketsDetails $}</div>
+        <div class="additional-info">{$ ticketsBlock.ticketsDetails1 $}</div>
+        <div class="additional-info">{$ ticketsBlock.ticketsDetails $}</div>
       </div>
     `;
   }

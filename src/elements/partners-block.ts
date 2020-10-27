@@ -88,10 +88,25 @@ export class PartnersBlock extends ReduxMixin(PolymerElement) {
           </div>
         </template>
 
-        <paper-button class="cta-button animated icon-right" on-click="_addPotentialPartner">
+        <!-- <paper-button class="cta-button animated icon-right" on-click="_addPotentialPartner">
           <span>{$ partnersBlock.button $}</span>
           <iron-icon icon="hoverboard:arrow-right-circle"></iron-icon>
-        </paper-button>
+        </paper-button> -->
+
+        <a
+          href="{$ partnersBlock.url $}"
+          ga-on="click"
+          ga-event-category="video"
+          ga-event-action="watch"
+          ga-event-label="partner block - {$ partnersBlock.button $}"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <paper-button class="cta-button animated icon-right">
+            <span>{$ partnersBlock.button $}</span>
+            <iron-icon icon="hoverboard:arrow-right-circle"></iron-icon>
+          </paper-button>
+        </a>
       </div>
     `;
   }
