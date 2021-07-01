@@ -90,7 +90,7 @@
     "eslint-plugin-polymer": "^0.4.0",
     "eslint-plugin-testing-library": "^4.2.0",
     "firebase-admin": "^9.7.0",
-    "firebase-tools": "^9.10.0",
+    "firebase-tools": "^9.14.0",
     "jest": "^26.6.3",
     "jest-dev-server": "^5.0.3",
     "jest-runner-eslint": "^0.10.0",
